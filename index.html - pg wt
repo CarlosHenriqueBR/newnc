@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compras internacionais: entenda taxas e liberações no Brasil</title>
+<meta name="description" content="Entenda como funcionam taxas e liberação de encomendas internacionais no Brasil. Guia informativo e gratuito.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: #f5f7fa; color: #1a1a1a; -webkit-font-smoothing: antialiased; }
+
+/* HEADER COM NAVEGAÇÃO — sinal de site real */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 14px 20px;
+}
+.site-header-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.site-logo {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a56db;
+  text-decoration: none;
+}
+.site-logo span { color: #1a1a1a; font-weight: 400; }
+.site-nav { display: flex; gap: 20px; flex-wrap: wrap; }
+.site-nav a { font-size: 13px; color: #6b7280; text-decoration: none; font-weight: 500; }
+.site-nav a:hover { color: #1a56db; }
+
+/* BREADCRUMB */
+.breadcrumb {
+  max-width: 720px;
+  margin: 12px auto 0;
+  padding: 0 20px;
+  font-size: 12px;
+  color: #9ca3af;
+}
+.breadcrumb a { color: #9ca3af; text-decoration: none; }
+.breadcrumb a:hover { color: #1a56db; }
+.breadcrumb span { margin: 0 6px; }
+
+/* CONTAINER */
+.container { max-width: 720px; margin: 0 auto; padding: 24px 20px 60px; }
+
+/* ARTICLE HEADER */
+.article-category {
+  display: inline-block;
+  background: #eff6ff;
+  color: #1a56db;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+.article-title {
+  font-size: clamp(22px, 5vw, 32px);
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.meta-author { display: flex; align-items: center; gap: 8px; }
+.meta-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+.meta-name { font-size: 13px; font-weight: 500; color: #374151; }
+.meta-info { font-size: 12px; color: #9ca3af; }
+.meta-sep { color: #e5e7eb; }
+
+.article-disclaimer {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-left: 3px solid #9ca3af;
+  border-radius: 0 8px 8px 0;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: #9ca3af;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* ALERT */
+.alert {
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  border-radius: 10px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.alert-icon { font-size: 18px; flex-shrink: 0; }
+.alert-text { font-size: 13px; color: #92400e; line-height: 1.6; }
+.alert-text strong { display: block; margin-bottom: 2px; color: #78350f; }
+
+/* BOX */
+.box {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 20px;
+}
+.box h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 10px;
+}
+.box p {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.75;
+  margin-bottom: 10px;
+}
+.box p:last-child { margin-bottom: 0; }
+
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.stat {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+}
+.stat-num { font-size: 22px; font-weight: 700; color: #1a56db; margin-bottom: 4px; }
+.stat-label { font-size: 11px; color: #9ca3af; line-height: 1.4; }
+
+/* VIDEO */
+.video-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.video-dot { width: 8px; height: 8px; border-radius: 50%; background: #ef4444; animation: blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1;}50%{opacity:0.3;} }
+.video-label span { font-size: 12px; font-weight: 600; color: #ef4444; text-transform: uppercase; letter-spacing: 1px; }
+.video-label .vl-sub { color: #9ca3af; font-weight: 400; text-transform: none; letter-spacing: 0; }
+
+.video-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+.video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+.video-badges {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.vbadge { font-size: 12px; color: #16a34a; font-weight: 500; display: flex; align-items: center; gap: 4px; }
+
+/* STEPS */
+.steps { display: flex; flex-direction: column; gap: 14px; }
+.step { display: flex; gap: 14px; align-items: flex-start; }
+.step-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: #eff6ff; color: #1a56db;
+  font-size: 14px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 2px;
+}
+.step-body strong { font-size: 14px; color: #111827; display: block; margin-bottom: 3px; }
+.step-body p { font-size: 13px; color: #6b7280; line-height: 1.6; margin: 0; }
+
+/* FAQ */
+.faq-item {
+  border-bottom: 1px solid #f3f4f6;
+  padding: 14px 0;
+  cursor: pointer;
+}
+.faq-item:last-child { border-bottom: none; }
+.faq-q {
+  font-size: 14px; font-weight: 600; color: #111827;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+}
+.faq-q .faq-icon { font-size: 18px; color: #1a56db; flex-shrink: 0; transition: transform 0.2s; font-weight: 400; }
+.faq-a { font-size: 13px; color: #6b7280; line-height: 1.7; margin-top: 8px; display: none; }
+.faq-item.open .faq-a { display: block; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+/* CTA */
+.cta-box {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1a56db 100%);
+  border-radius: 16px;
+  padding: 28px 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.cta-box h3 { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 8px; line-height: 1.3; }
+.cta-box p { font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 20px; }
+.cta-btn {
+  display: inline-block;
+  background: #fbbf24;
+  color: #1a1a1a;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.2s, transform 0.1s;
+}
+.cta-btn:hover { background: #f59e0b; }
+.cta-btn:active { transform: scale(0.97); }
+.cta-note { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 10px; }
+
+/* AUTOR BIO */
+.author-box {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.author-avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.author-name { font-size: 14px; font-weight: 600; color: #111827; margin-bottom: 4px; }
+.author-bio { font-size: 12px; color: #9ca3af; line-height: 1.6; }
+
+/* RELATED */
+.related-title { font-size: 16px; font-weight: 700; color: #111827; margin-bottom: 12px; }
+.related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 24px; }
+.related-item {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px;
+  text-decoration: none;
+  display: block;
+  transition: border-color 0.2s;
+}
+.related-item:hover { border-color: #1a56db; }
+.related-cat { font-size: 10px; color: #1a56db; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+.related-name { font-size: 13px; font-weight: 600; color: #111827; line-height: 1.4; }
+
+/* FOOTER */
+.site-footer {
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  padding: 28px 20px;
+  margin-top: 20px;
+}
+.site-footer-inner { max-width: 720px; margin: 0 auto; }
+.footer-logo { font-size: 16px; font-weight: 700; color: #1a56db; margin-bottom: 12px; display: block; }
+.footer-logo span { color: #1a1a1a; font-weight: 400; }
+.footer-links { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 12px; }
+.footer-links a { font-size: 12px; color: #9ca3af; text-decoration: none; }
+.footer-links a:hover { color: #1a56db; }
+.footer-info { font-size: 11px; color: #d1d5db; line-height: 1.8; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">Guia<span>Encomendas</span></a>
+    <nav class="site-nav">
+      <a href="#">Início</a>
+      <a href="#">Importação</a>
+      <a href="#">Tributos</a>
+      <a href="#">Dúvidas</a>
+      <a href="#">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="#">Início</a>
+  <span>›</span>
+  <a href="#">Importação</a>
+  <span>›</span>
+  Taxas e liberações
+</div>
+
+<div class="container">
+
+  <!-- ARTICLE HEADER -->
+  <span class="article-category">Guia Informativo</span>
+  <h1 class="article-title">Compras internacionais: entenda como funcionam taxas e liberações no Brasil</h1>
+
+  <div class="article-meta">
+    <div class="meta-author">
+      <img class="meta-avatar" src="https://randomuser.me/api/portraits/women/55.jpg" alt="Redação">
+      <span class="meta-name">Redação GuiaEncomendas</span>
+    </div>
+    <span class="meta-sep">·</span>
+    <span class="meta-info">Atualizado em abril de 2025</span>
+    <span class="meta-sep">·</span>
+    <span class="meta-info">5 min de leitura</span>
+  </div>
+
+  <div class="article-disclaimer">
+    ⚠️ Conteúdo exclusivamente informativo. Este site não possui vínculo com os Correios, Receita Federal ou qualquer órgão governamental. As informações aqui apresentadas têm caráter educativo.
+  </div>
+
+  <!-- ALERTA -->
+  <div class="alert">
+    <span class="alert-icon">📦</span>
+    <div class="alert-text">
+      <strong>Sua encomenda foi retida ou tributada?</strong>
+      Desde 2024, compras acima de US$ 50 em sites internacionais podem ser tributadas. Neste guia você entende como funciona o processo e o que fazer em cada situação.
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">20%</div>
+      <div class="stat-label">Imposto sobre valor da compra</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">US$50</div>
+      <div class="stat-label">Limite de isenção por compra</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">30d</div>
+      <div class="stat-label">Prazo para regularizar</div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="box">
+    <h2>O que pode acontecer com sua encomenda</h2>
+    <p>Se você compra em sites como Shein, Shopee, AliExpress ou Amazon, é possível que sua encomenda passe por verificação alfandegária ao chegar ao Brasil. Dependendo do valor da compra e do tipo de envio, pode haver tributação.</p>
+    <p>Entender esse processo é importante para saber o que fazer ao receber uma notificação — e evitar perder sua encomenda por não agir dentro do prazo.</p>
+  </div>
+
+  <!-- VÍDEO -->
+  <div class="box">
+    <h2>Veja um exemplo prático — passo a passo completo</h2>
+    <p>No vídeo abaixo, você acompanha como consultar o status, entender notificações e acompanhar a liberação de uma encomenda internacional.</p>
+
+    <div class="video-label">
+      <div class="video-dot"></div>
+      <span>Vídeo gratuito</span>
+      <span class="vl-sub">· Guia passo a passo atualizado</span>
+    </div>
+
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/QqUq1IxDCTc?rel=0&modestbranding=1" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>
+
+    <div class="video-badges">
+      <span class="vbadge">✔ Conteúdo gratuito</span>
+      <span class="vbadge">✔ Atualizado em 2025</span>
+      <span class="vbadge">✔ Explicação passo a passo</span>
+    </div>
+  </div>
+
+  <!-- O QUE VAI APRENDER -->
+  <div class="box">
+    <h2>O que você vai aprender</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <strong>Como verificar o status da encomenda</strong>
+          <p>Aprenda a consultar pelo site dos Correios e entender o que cada status significa.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <strong>Como entender notificações de importação</strong>
+          <p>O que fazer ao receber um aviso de tributação e quais são seus prazos legais.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <strong>Como acompanhar a liberação do pedido</strong>
+          <p>Passo a passo para pagar e monitorar a liberação da sua encomenda em tempo real.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <strong>O que fazer em caso de dúvidas sobre cobrança</strong>
+          <p>Como verificar se o valor está correto e como contestar cobranças indevidas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="box">
+    <h2>Perguntas frequentes</h2>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Toda compra internacional é tributada? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Não. Compras de até US$ 50 entre pessoas físicas são isentas. Acima disso, incide 20% de imposto sobre o valor total, incluindo frete.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Posso recusar o pagamento do tributo? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Sim. Se recusar, a encomenda é devolvida ao remetente. Você tem até 30 dias para decidir após a notificação oficial.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">As regras são iguais para Shein, Shopee e AliExpress? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Sim. A alíquota de 20% se aplica a todos os sites internacionais, independente da plataforma.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Quanto tempo leva para liberar após pagamento? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Em geral, de 3 a 7 dias úteis após confirmação do pagamento. O vídeo acima mostra como acompanhar o status em tempo real.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">O valor cobrado pode estar errado? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Sim, erros acontecem. Você tem direito a contestar a cobrança. O vídeo explica como fazer isso de forma simples e dentro do prazo.</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <h3>Assista ao guia completo agora</h3>
+    <p>Explicação simples, direta e atualizada. 100% gratuito, sem cadastro.</p>
+    <button class="cta-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">▶ Assistir agora</button>
+    <p class="cta-note">Gratuito · Sem cadastro · Disponível agora</p>
+  </div>
+
+  <!-- AUTOR -->
+  <div class="author-box">
+    <img class="author-avatar" src="https://randomuser.me/api/portraits/women/55.jpg" alt="Autora">
+    <div>
+      <div class="author-name">Redação GuiaEncomendas</div>
+      <div class="author-bio">Equipe especializada em comércio internacional e direitos do consumidor. Produzimos conteúdo informativo e educativo sobre importações, tributação e logística no Brasil.</div>
+    </div>
+  </div>
+
+  <!-- ARTIGOS RELACIONADOS -->
+  <p class="related-title">Leia também</p>
+  <div class="related-grid">
+    <a href="#" class="related-item">
+      <div class="related-cat">Importação</div>
+      <div class="related-name">Como calcular o imposto de importação antes de comprar</div>
+    </a>
+    <a href="#" class="related-item">
+      <div class="related-cat">Direitos</div>
+      <div class="related-name">O que fazer se sua encomenda não chegou no prazo</div>
+    </a>
+    <a href="#" class="related-item">
+      <div class="related-cat">Dicas</div>
+      <div class="related-name">Compras no AliExpress: como evitar surpresas na entrega</div>
+    </a>
+    <a href="#" class="related-item">
+      <div class="related-cat">Tributação</div>
+      <div class="related-name">Isenção de imposto: quem tem direito e como funciona</div>
+    </a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <span class="footer-logo">Guia<span>Encomendas</span></span>
+    <div class="footer-links">
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos de Uso</a>
+      <a href="#">Sobre nós</a>
+      <a href="#">Contato</a>
+    </div>
+    <div class="footer-info">
+      CNPJ: 00.000.000/0001-00 &nbsp;·&nbsp; contato@guiaencomendas.com.br<br>
+      © 2025 GuiaEncomendas · Conteúdo exclusivamente informativo · Não possui vínculo com Correios ou órgãos governamentais.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
